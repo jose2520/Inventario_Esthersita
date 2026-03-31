@@ -46,3 +46,22 @@ PROYECTO_INVENTARIO/
 │
 └── README.md                # Descripción del proyecto y objetivos del módulo
 
+
+
+PROYECTO_INVENTARIO/             <-- Carpeta principal (Abrir en VS Code)
+│
+├── .gitignore                   # Para ignorar archivos basura (__pycache__)
+├── README.md                    # Descripción de tu proyecto (Buen hábito)
+│
+├── data/                        # CARPETA PARA PERSISTENCIA (S3)
+│   └── inventario.csv           # Aquí se guardan tus productos (Task 4 y 5)
+│
+├── docs/                        # CARPETA DE ENTREGABLES
+│   ├── diagrama_semana1.png     # Task 1 - Semana 1
+│   └── diagrama_final.png       # Task 1 - Semana 3 (CRUD completo)
+│
+└── src/                         # CARPETA DE CÓDIGO FUENTE (Task 2 - S3)
+    ├── __init__.py              # Archivo vacío (Hace que src sea un paquete)
+    ├── app.py                   # EL MENÚ: if/elif, while, inputs (S1, S2, S3)
+    ├── servicios.py             # LA LÓGICA: CRUD, Lambdas, Estadísticas (S2, S3)
+    └── archivos.py              # LOS ARCHIVOS: Guardar/Cargar, Try/Except (S3)
