@@ -23,3 +23,26 @@ INVENTARIO ESTHERSITA/
 ├── requirements.txt        # Lista de librerías instaladas (pip install -r)
 ├── README.md               # Instrucciones del proyecto
 └── venv/                   # Entorno virtual (generado automáticamente)
+
+
+
+
+
+
+
+PROYECTO_INVENTARIO/
+│
+├── data/                    # Carpeta para persistencia (Task 4 y 5)
+│   └── inventario.csv       # Archivo generado por guardar_csv()
+│
+├── src/                     # Código fuente modularizado (Task 2)
+│   ├── __init__.py          # Convierte la carpeta en un paquete
+│   ├── app.py               # Menú principal y bucle while (Task 1 y 6)
+│   ├── servicios.py         # CRUD y Estadísticas con Lambdas (Task 2 y 3)
+│   └── archivos.py          # Lógica de Guardar/Cargar CSV y Try/Except (Task 4 y 5)
+│
+├── docs/                    # (Opcional) Para organizar tus entregables
+│   └── diagrama_flujo.png   # El diagrama de flujo de draw.io (Task 1)
+│
+└── README.md                # Descripción del proyecto y objetivos del módulo
+
