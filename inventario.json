@@ -1,0 +1,512 @@
+[
+    {
+        "nombre": "MATE",
+        "precio": 1000.0,
+        "cantidad": 100
+    },
+    {
+        "nombre": "CEBOLLA",
+        "precio": 700.0,
+        "cantidad": 205
+    },
+    {
+        "nombre": "PRODUCTO_001",
+        "precio": 1250.5,
+        "cantidad": 45
+    },
+    {
+        "nombre": "PRODUCTO_002",
+        "precio": 310.25,
+        "cantidad": 120
+    },
+    {
+        "nombre": "PRODUCTO_003",
+        "precio": 4500.0,
+        "cantidad": 12
+    },
+    {
+        "nombre": "PRODUCTO_004",
+        "precio": 890.75,
+        "cantidad": 300
+    },
+    {
+        "nombre": "PRODUCTO_005",
+        "precio": 2150.0,
+        "cantidad": 78
+    },
+    {
+        "nombre": "PRODUCTO_006",
+        "precio": 150.0,
+        "cantidad": 500
+    },
+    {
+        "nombre": "PRODUCTO_007",
+        "precio": 3200.4,
+        "cantidad": 25
+    },
+    {
+        "nombre": "PRODUCTO_008",
+        "precio": 1000.0,
+        "cantidad": 200
+    },
+    {
+        "nombre": "PRODUCTO_009",
+        "precio": 1100.0,
+        "cantidad": 88
+    },
+    {
+        "nombre": "PRODUCTO_010",
+        "precio": 430.0,
+        "cantidad": 210
+    },
+    {
+        "nombre": "PRODUCTO_011",
+        "precio": 2900.5,
+        "cantidad": 33
+    },
+    {
+        "nombre": "PRODUCTO_012",
+        "precio": 155.0,
+        "cantidad": 600
+    },
+    {
+        "nombre": "PRODUCTO_013",
+        "precio": 3800.75,
+        "cantidad": 15
+    },
+    {
+        "nombre": "PRODUCTO_014",
+        "precio": 920.0,
+        "cantidad": 140
+    },
+    {
+        "nombre": "PRODUCTO_015",
+        "precio": 1200.25,
+        "cantidad": 95
+    },
+    {
+        "nombre": "PRODUCTO_016",
+        "precio": 540.0,
+        "cantidad": 220
+    },
+    {
+        "nombre": "PRODUCTO_017",
+        "precio": 2750.6,
+        "cantidad": 40
+    },
+    {
+        "nombre": "PRODUCTO_018",
+        "precio": 180.0,
+        "cantidad": 450
+    },
+    {
+        "nombre": "PRODUCTO_019",
+        "precio": 4100.3,
+        "cantidad": 18
+    },
+    {
+        "nombre": "PRODUCTO_020",
+        "precio": 850.4,
+        "cantidad": 180
+    },
+    {
+        "nombre": "PRODUCTO_021",
+        "precio": 1350.0,
+        "cantidad": 66
+    },
+    {
+        "nombre": "PRODUCTO_022",
+        "precio": 460.8,
+        "cantidad": 280
+    },
+    {
+        "nombre": "PRODUCTO_023",
+        "precio": 3150.2,
+        "cantidad": 29
+    },
+    {
+        "nombre": "PRODUCTO_024",
+        "precio": 195.5,
+        "cantidad": 520
+    },
+    {
+        "nombre": "PRODUCTO_025",
+        "precio": 3950.0,
+        "cantidad": 21
+    },
+    {
+        "nombre": "PRODUCTO_026",
+        "precio": 780.9,
+        "cantidad": 135
+    },
+    {
+        "nombre": "PRODUCTO_027",
+        "precio": 1420.35,
+        "cantidad": 55
+    },
+    {
+        "nombre": "PRODUCTO_028",
+        "precio": 510.1,
+        "cantidad": 240
+    },
+    {
+        "nombre": "PRODUCTO_029",
+        "precio": 2600.45,
+        "cantidad": 38
+    },
+    {
+        "nombre": "PRODUCTO_030",
+        "precio": 165.75,
+        "cantidad": 480
+    },
+    {
+        "nombre": "PRODUCTO_031",
+        "precio": 4400.1,
+        "cantidad": 10
+    },
+    {
+        "nombre": "PRODUCTO_032",
+        "precio": 960.2,
+        "cantidad": 195
+    },
+    {
+        "nombre": "PRODUCTO_033",
+        "precio": 1580.0,
+        "cantidad": 72
+    },
+    {
+        "nombre": "PRODUCTO_034",
+        "precio": 490.55,
+        "cantidad": 310
+    },
+    {
+        "nombre": "PRODUCTO_035",
+        "precio": 3350.8,
+        "cantidad": 27
+    },
+    {
+        "nombre": "PRODUCTO_036",
+        "precio": 210.4,
+        "cantidad": 550
+    },
+    {
+        "nombre": "PRODUCTO_037",
+        "precio": 3700.25,
+        "cantidad": 14
+    },
+    {
+        "nombre": "PRODUCTO_038",
+        "precio": 810.6,
+        "cantidad": 125
+    },
+    {
+        "nombre": "PRODUCTO_039",
+        "precio": 1670.9,
+        "cantidad": 63
+    },
+    {
+        "nombre": "PRODUCTO_040",
+        "precio": 580.3,
+        "cantidad": 265
+    },
+    {
+        "nombre": "PRODUCTO_041",
+        "precio": 2450.15,
+        "cantidad": 42
+    },
+    {
+        "nombre": "PRODUCTO_042",
+        "precio": 175.8,
+        "cantidad": 410
+    },
+    {
+        "nombre": "PRODUCTO_043",
+        "precio": 4250.65,
+        "cantidad": 19
+    },
+    {
+        "nombre": "PRODUCTO_044",
+        "precio": 940.45,
+        "cantidad": 160
+    },
+    {
+        "nombre": "PRODUCTO_045",
+        "precio": 1740.0,
+        "cantidad": 84
+    },
+    {
+        "nombre": "PRODUCTO_046",
+        "precio": 525.9,
+        "cantidad": 295
+    },
+    {
+        "nombre": "PRODUCTO_047",
+        "precio": 3050.35,
+        "cantidad": 31
+    },
+    {
+        "nombre": "PRODUCTO_048",
+        "precio": 225.2,
+        "cantidad": 580
+    },
+    {
+        "nombre": "PRODUCTO_049",
+        "precio": 3600.95,
+        "cantidad": 16
+    },
+    {
+        "nombre": "PRODUCTO_050",
+        "precio": 830.15,
+        "cantidad": 145
+    },
+    {
+        "nombre": "PRODUCTO_051",
+        "precio": 1820.7,
+        "cantidad": 69
+    },
+    {
+        "nombre": "PRODUCTO_052",
+        "precio": 595.4,
+        "cantidad": 275
+    },
+    {
+        "nombre": "PRODUCTO_053",
+        "precio": 2300.8,
+        "cantidad": 48
+    },
+    {
+        "nombre": "PRODUCTO_054",
+        "precio": 185.35,
+        "cantidad": 430
+    },
+    {
+        "nombre": "PRODUCTO_055",
+        "precio": 4750.2,
+        "cantidad": 9
+    },
+    {
+        "nombre": "PRODUCTO_056",
+        "precio": 995.6,
+        "cantidad": 115
+    },
+    {
+        "nombre": "PRODUCTO_057",
+        "precio": 1910.45,
+        "cantidad": 75
+    },
+    {
+        "nombre": "PRODUCTO_058",
+        "precio": 615.2,
+        "cantidad": 320
+    },
+    {
+        "nombre": "PRODUCTO_059",
+        "precio": 3550.1,
+        "cantidad": 23
+    },
+    {
+        "nombre": "PRODUCTO_060",
+        "precio": 240.75,
+        "cantidad": 610
+    },
+    {
+        "nombre": "PRODUCTO_061",
+        "precio": 3850.55,
+        "cantidad": 13
+    },
+    {
+        "nombre": "PRODUCTO_062",
+        "precio": 875.9,
+        "cantidad": 170
+    },
+    {
+        "nombre": "PRODUCTO_063",
+        "precio": 1990.15,
+        "cantidad": 59
+    },
+    {
+        "nombre": "PRODUCTO_064",
+        "precio": 640.85,
+        "cantidad": 340
+    },
+    {
+        "nombre": "PRODUCTO_065",
+        "precio": 2150.25,
+        "cantidad": 52
+    },
+    {
+        "nombre": "PRODUCTO_066",
+        "precio": 265.4,
+        "cantidad": 590
+    },
+    {
+        "nombre": "PRODUCTO_067",
+        "precio": 4650.8,
+        "cantidad": 11
+    },
+    {
+        "nombre": "PRODUCTO_068",
+        "precio": 1020.3,
+        "cantidad": 130
+    },
+    {
+        "nombre": "PRODUCTO_069",
+        "precio": 2080.6,
+        "cantidad": 67
+    },
+    {
+        "nombre": "PRODUCTO_070",
+        "precio": 680.1,
+        "cantidad": 360
+    },
+    {
+        "nombre": "PRODUCTO_071",
+        "precio": 3450.45,
+        "cantidad": 20
+    },
+    {
+        "nombre": "PRODUCTO_072",
+        "precio": 285.95,
+        "cantidad": 570
+    },
+    {
+        "nombre": "PRODUCTO_073",
+        "precio": 3950.2,
+        "cantidad": 17
+    },
+    {
+        "nombre": "PRODUCTO_074",
+        "precio": 1150.7,
+        "cantidad": 110
+    },
+    {
+        "nombre": "PRODUCTO_075",
+        "precio": 2160.35,
+        "cantidad": 81
+    },
+    {
+        "nombre": "PRODUCTO_076",
+        "precio": 720.55,
+        "cantidad": 380
+    },
+    {
+        "nombre": "PRODUCTO_077",
+        "precio": 2550.9,
+        "cantidad": 46
+    },
+    {
+        "nombre": "PRODUCTO_078",
+        "precio": 310.2,
+        "cantidad": 630
+    },
+    {
+        "nombre": "PRODUCTO_079",
+        "precio": 4150.6,
+        "cantidad": 14
+    },
+    {
+        "nombre": "PRODUCTO_080",
+        "precio": 1240.4,
+        "cantidad": 105
+    },
+    {
+        "nombre": "PRODUCTO_081",
+        "precio": 2240.85,
+        "cantidad": 74
+    },
+    {
+        "nombre": "PRODUCTO_082",
+        "precio": 760.15,
+        "cantidad": 410
+    },
+    {
+        "nombre": "PRODUCTO_083",
+        "precio": 2850.35,
+        "cantidad": 39
+    },
+    {
+        "nombre": "PRODUCTO_084",
+        "precio": 335.6,
+        "cantidad": 540
+    },
+    {
+        "nombre": "PRODUCTO_085",
+        "precio": 4350.1,
+        "cantidad": 12
+    },
+    {
+        "nombre": "PRODUCTO_086",
+        "precio": 1330.9,
+        "cantidad": 98
+    },
+    {
+        "nombre": "PRODUCTO_087",
+        "precio": 2320.5,
+        "cantidad": 89
+    },
+    {
+        "nombre": "PRODUCTO_088",
+        "precio": 795.3,
+        "cantidad": 430
+    },
+    {
+        "nombre": "PRODUCTO_089",
+        "precio": 3150.75,
+        "cantidad": 35
+    },
+    {
+        "nombre": "PRODUCTO_090",
+        "precio": 360.45,
+        "cantidad": 520
+    },
+    {
+        "nombre": "PRODUCTO_091",
+        "precio": 4550.25,
+        "cantidad": 8
+    },
+    {
+        "nombre": "PRODUCTO_092",
+        "precio": 1410.15,
+        "cantidad": 102
+    },
+    {
+        "nombre": "PRODUCTO_093",
+        "precio": 2410.6,
+        "cantidad": 71
+    },
+    {
+        "nombre": "PRODUCTO_094",
+        "precio": 820.85,
+        "cantidad": 450
+    },
+    {
+        "nombre": "PRODUCTO_095",
+        "precio": 3350.4,
+        "cantidad": 28
+    },
+    {
+        "nombre": "PRODUCTO_096",
+        "precio": 385.2,
+        "cantidad": 500
+    },
+    {
+        "nombre": "PRODUCTO_097",
+        "precio": 4850.95,
+        "cantidad": 6
+    },
+    {
+        "nombre": "PRODUCTO_098",
+        "precio": 1520.35,
+        "cantidad": 92
+    },
+    {
+        "nombre": "PRODUCTO_099",
+        "precio": 2520.7,
+        "cantidad": 64
+    },
+    {
+        "nombre": "PRODUCTO_100",
+        "precio": 870.5,
+        "cantidad": 470
+    }
+]
