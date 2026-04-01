@@ -32,29 +32,33 @@ while True:
 
     opcion = input(f"\n{AMARILLO}👉 Selecciona una opción (1-10): {RESET}").strip()
 
+    #▸▸  OPTION 1° AGREGAR PRODUCTO          = Solicita el nombre, el precio y el stock (cantidad disponible) para registrar el producto en el sistema.
     if opcion == "1":
         funciones.agregar_producto(inventario)
         funciones.guardar_datos(inventario)
         time.sleep(1.2)
 
+    #▸▸ OPCION 2° MUESTRA EL INVENTARIO      = Muestra el inventario completo organizado en tres columnas: Nombre, Precio y Stock.
     elif opcion == "2":
         funciones.mostrar_inventario(inventario)
         input(f"\n{AZUL}Presiona Enter para volver al menú...{RESET}")
 
+    #▸▸ OPCION 3° BUSCAR PRODUCTO            = Ingresa el nombre del producto registrado en el inventario. Tras una validación correcta, el sistema mostrará el nombre, precio, stock y el subtotal (calculado como precio * stock).
     elif opcion == "3":
         funciones.interfaz_buscar_producto(inventario)
         input(f"\n{AZUL}Presiona Enter para volver...{RESET}")
 
+    #▸▸ OPCION 4° EDITAR PRODUCTO            = Solicita el nombre del producto a modificar. Luego, muestra el precio actual y solicita el nuevo, seguido del stock actual para capturar la cantidad actualizada o presione 'Enter' para mantener los datos actuales sin cambios.
     elif opcion == "4":
         funciones.actualizar_producto(inventario)
         funciones.guardar_datos(inventario)
         time.sleep(1.5)
-
+    #▸▸ OPCION 5° ELIMINAR PRODUCTO          = Solicita el nombre del producto a eliminar.
     elif opcion == "5":
         funciones.eliminar_producto(inventario)
         funciones.guardar_datos(inventario)
         time.sleep(1.5)
-
+    #▸▸ OPCION 6° VER REPORTES ESTADISTICOS  =  
     elif opcion == "6":
         stats = funciones.calcular_estadisticas(inventario)
         if stats:
@@ -68,11 +72,11 @@ while True:
         else:
             print(f"\n{ROJO}⚠️ Sin datos suficientes.{RESET}")
         input(f"\n{AZUL}Presiona Enter para continuar...{RESET}")
-
+    #▸▸ OPCION 4° 
     elif opcion == "7":
         archivo.guardar_csv(inventario)
         time.sleep(2)
-
+    #▸▸ OPCION 4° 
     elif opcion == "8":
         ruta = input(f"\n📂 Nombre del archivo (ej: datos.csv): ").strip()
         prods_nuevos, total_errores = archivo.cargar_csv(ruta)
@@ -85,17 +89,17 @@ while True:
             funciones.guardar_datos(inventario)
             print(f"\n{VERDE}✅ Carga completada.{RESET}")
         input(f"\n{AZUL}Presiona Enter para volver...{RESET}")
-
+    #▸▸ OPCION 4° 
     elif opcion == "9":
         funciones.reiniciar_inventario(inventario)
         time.sleep(1.5)
-
+    #▸▸ OPCION 4° 
     elif opcion == "10":
         funciones.guardar_datos(inventario)
         print(f"\n{ROJO}👋 Saliendo...{RESET}")
         time.sleep(1)
         break
-
+        #▸▸ 
     else:
         print(f"\n{ROJO}⚠️ Error: Opción inválida.{RESET}")
         time.sleep(1.2)

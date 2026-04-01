@@ -508,5 +508,10 @@
         "nombre": "PRODUCTO_100",
         "precio": 870.5,
         "cantidad": 470
+    },
+    {
+        "nombre": "chocolate",
+        "precio": 5000.0,
+        "cantidad": 100
     }
 ]

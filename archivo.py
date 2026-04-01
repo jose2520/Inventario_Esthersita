@@ -1,5 +1,4 @@
 import csv
-import os
 
 # Colores para mensajes de estado
 VERDE, ROJO, RESET = "\033[92m", "\033[91m", "\033[0m"

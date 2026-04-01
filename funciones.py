@@ -17,6 +17,7 @@ def cargar_datos(nombre_archivo="inventario.json"):
             return []
     return []
 
+
 def guardar_datos(inventario, nombre_archivo="inventario.json"):
     """Guarda el estado actual del inventario en el archivo JSON."""
     try:
@@ -142,3 +143,5 @@ def reiniciar_inventario(inventario):
         inventario.clear()
         if os.path.exists("inventario.json"): os.remove("inventario.json")
         print(f"✅ {VERDE}Sistema reiniciado.{RESET}")
+
+
