@@ -1,0 +1,277 @@
+================================================================================
+            SISTEMA DE GESTIÓN DE INVENTARIO (SGI) - v2.0
+                     Arquitectura de Software
+================================================================================
+
+[ CAPA DE USUARIO ]        [ CAPA DE LÓGICA (Bussiness) ]    [ CAPA DE DATOS ]
+      menu.py                   funciones.py                   archivo.py
+-------------------------  ----------------------------   ----------------------
+       (UI)                      (Controller)                  (Storage)
+        |                              |                           |
+        |  1. Inicializar Arreglo      |                           |
+        |----------------------------> |  2. Leer JSON (f)         |
+        |                              | <----------------------- [inventario.json]
+        |                              |                           |
+        |  3. Bucle de Interacción     |                           |
+        | <==========================> |                           |
+        |      (CLI Terminal)          |                           |
+        |                              |                           |
+        |  4. Acción CRUD / Stats      |                           |
+        | ---------------------------> |  5. Procesar RAM          |
+        |                              |     (List/Dicts)          |
+        |                              |                           |
+        |  6. Persistencia Inmediata   |                           |
+        | ---------------------------> |  7. Dump JSON             |
+        |                              | -----------------------> [inventario.json]
+        |                              |                           |
+        |  8. Intercambio Externo      |                           |
+        | ------------------------------------------------------>  9. Export/Import
+        |                              |                           | <--- [CSV]
+        |______________________________|___________________________|
+
+
+================================================================================
+                   FLUJO DE DATOS DETALLADO (ESTRUCTURA)
+================================================================================
+
+   ENTRADA (Inputs)            PROCESAMIENTO (RAM)           SALIDA (Persistencia)
+  ------------------          ---------------------         ----------------------
+  > Nombre (str)    -----\    [ { "nombre": "X", ]    /--->  JSON (Estructurado)
+  > Precio (float)  ------>     "precio": 0.0,    |          "Sync Automática"
+  > Cantidad (int)  -----/      "cantidad": 0 }  ]    \--->  CSV (Hoja Cálculo)
+                                                              "Export/Import"
+
+================================================================================
+                    ESPECIFICACIONES TÉCNICAS (Stack)
+================================================================================
+
+  * MOTOR:        Python 3.x
+  * INTERFAZ:     ANSI Escaped CLI (Colores y Tablas ASCII)
+  * PERSISTENCIA: Serialización JSON (UTF-8)
+  * INTEGRACIÓN:  CSV Engine (DictWriter)
+  * SEGURIDAD:    Validación de tipos (Try-Except) y Persistencia Atómica
+
+--------------------------------------------------------------------------------
+   "El código está diseñado bajo el principio de Responsabilidad Única (SRP)"
+--------------------------------------------------------------------------------
+
+
+
+
+================================================================================
+                DIAGRAMA DE FLUJO: LÓGICA DE EJECUCIÓN (SGI)
+================================================================================
+
+       [ INICIO ]
+           |
+           v
+  +--------------------+
+  |  cargar_datos()    | <--- Intenta leer 'inventario.json'
+  +--------------------+
+           |
+           v
++------------------------+
+|   ¿Archivo existe?     |---- NO ----> [ Crear Lista Vacía [] ]
++------------------------+                    |
+           | SÍ                               |
+           v                                  v
+[ Cargar Diccionarios ] <---------- [ Referencia: 'inventario' ]
+           |                                  |
+           +<---------------------------------+
+           |
+    +----->v---------------------------+
+    |   [ MOSTRAR MENÚ PRINCIPAL ]     | <--- (Loop Infinito)
+    +----------------------------------+
+           |
+           v
+    [ Leer Opción (1-10) ]
+           |
+           +----------( ¿Qué eligió el usuario? )----------+
+           |                 |                 |           |
+     [ Opción 1-5 ]    [ Opción 6-8 ]    [ Opción 9 ] [ Opción 10 ]
+           |                 |                 |           |
+           v                 v                 v           v
+    +--------------+  +--------------+  +------------+  +----------+
+    |  MODIFICAR   |  |   LECTURA /  |  | REINICIAR  |  |  SALIR   |
+    |    DATOS     |  |   EXTERNOS   |  |   TOTAL    |  +----------+
+    +--------------+  +--------------+  +------------+       |
+           |                 |                 |             v
+           v                 v                 v        [ GUARDAR ]
+    +--------------+  +--------------+  +------------+  [  Y FIN  ]
+    | Validar Tipo |  | Procesar en  |  | ¿Confirmó? |
+    | (Try/Except) |  |   RAM/CSV    |  |   (s/n)    |
+    +--------------+  +--------------+  +------------+
+           |                 |                 |
+           v                 |                 v
+    +--------------+         |          +------------+
+    | GUARDAR JSON | <-------+          | BORRAR JSON|
+    +--------------+                    +------------+
+           |                                   |
+           +-----------------------------------+
+           |
+           v
+    [ Pausa / Sleep ]
+           |
+    +------+------> ( Regresa al Menú )
+    
+    
+    
+    
+    
+    ================================================================================
+           DIAGRAMA DE FLUJO TÉCNICO - SISTEMA DE INVENTARIO (SGI)
+================================================================================
+
+      ( INICIO )  <------------------ [ ÓVALO / TERMINADOR ]
+           |                          Punto de partida del script (menu.py)
+    [Línea de Flujo]
+           v
+  /--------------------\
+ /   cargar_datos()     /  <--------- [ PARALELOGRAMO / ENTRADA ]
+/----------------------/              Lectura del archivo 'inventario.json'
+           |
+           v
+   +------------------+
+   | inventario = []  |  <----------- [ RECTÁNGULO / PROCESO ]
+   +------------------+               Definición de la lista principal en RAM
+           |
+           v
+   +------------------+
+   |  LIMPIAR PANTALLA|  <----------- [ RECTÁNGULO / PROCESO ]
+   |  Y MOSTRAR MENÚ  |               Interfaz ANSI y colores (os.system)
+   +------------------+
+           |
+           v
+  /--------------------\
+ /   Leer 'opcion'      /  <--------- [ PARALELOGRAMO / ENTRADA ]
+/----------------------/              Captura de teclado del usuario (1-10)
+           |
+           v
+           /\
+          /  \
+         / ¿Es\
+        <  10? >  <------------------ [ DIAMANTE / DECISIÓN ]
+         \    /                       Evaluación lógica del flujo
+          \  /
+           \/
+          /  \_________________
+      [NO]                     | [SÍ]
+        |                      v
+        v             +------------------+
+    (¿1 al 9?)        |  guardar_datos() | <--- [ RECTÁNGULO / PROCESO ]
+        |             +------------------+
+        |                      |
+        |                      v
+        |                  (  FIN  ) <--------- [ ÓVALO / TERMINADOR ]
+        |
+        v
+   +-----------------------+
+   | EJECUTAR FUNCIÓN      | <------- [ RECTÁNGULO / PROCESO ]
+   | (Agregar/Ver/CSV/etc) |          Llamada a lógica en funciones.py
+   +-----------------------+
+        |
+        v
+   +-----------------------+
+   |   guardar_datos()     | <------- [ RECTÁNGULO / PROCESO ]
+   |   (Sincronizar JSON)  |          Persistencia automática en disco
+   +-----------------------+
+        |
+        v
+   [ Línea de Flujo ]  ------> (Regresa a Limpiar Pantalla / Menú)
+
+================================================================================
+
+
+
+==================================================================================================
+                 DIAGRAMA DE FLUJO DE INGENIERÍA: SISTEMA DE GESTIÓN DE INVENTARIO
+==================================================================================================
+
+          ( INICIO: Ejecución menu.py ) <--- [ ÓVALO: TERMINADOR ]
+                       |
+                       v
+              +------------------+
+              | IMPORT funciones | <--- [ RECTÁNGULO: PROCESO PREDEFINIDO ]
+              | IMPORT archivo   |      Carga de módulos y constantes ANSI
+              +------------------+
+                       |
+                       v
+              /------------------\
+             /   cargar_datos()   / <--- [ PARALELOGRAMO: ENTRADA DE DATOS ]
+            \    (JSON -> RAM)    /      Intenta abrir 'inventario.json'
+             \------------------/
+                       |
+            ___________v___________
+           /                       \
+          /      ¿Existe el         \
+         <    archivo o es válido?   > <--- [ DIAMANTE: DECISIÓN ]
+          \                         /
+           \_______________________/
+             | [SÍ]            | [NO]
+             v                 v
+      [ Cargar Lista ]  [ Iniciar Lista ]
+      [ de Diccionarios] [    Vacía []   ]
+             |                 |
+             v_________________v
+                       |
+        +------------->v<--------------+
+        |     +------------------+     |
+        |     | LIMPIAR PANTALLA |     | <--- [ RECTÁNGULO: PROCESO ]
+        |     |  DIBUJAR TABLA   |     |      Llamada a os.system y print()
+        |     +------------------+     |
+        |              |               |
+        |              v               |
+        |     /------------------\     |
+        |    /  Capturar Opcion   /    | <--- [ PARALELOGRAMO: ENTRADA ]
+        |   \     (1 al 10)      /     |      .strip() para limpiar espacios
+        |    \------------------/      |
+        |              |               |
+        |    __________v__________     |
+        |   /                     \    |
+        |  /    ¿Es Opción 10?     \   |
+        | <       (SALIR)           >--+--- [NO: Seguir Procesando]
+        |  \                       /
+        |   \_____________________/
+        |              | [SÍ]
+        |              v
+        |     +------------------+
+        |     |  guardar_datos() | <--- [ RECTÁNGULO: PROCESO ]
+        |     |  (Persistencia)  |      Sincronización final JSON
+        |     +------------------+
+        |              |
+        |              v
+        |          (  FIN  )
+        |
+        |    [ DESGLOSE DE SUBPROCESOS LÓGICOS (Opciones 1-9) ]
+        |    __________________________________________________
+        |              |
+        +-------[ CASO: CRUD ]-----------------------------------------+
+        |       (1, 4, 5, 9)                                           |
+        |              |                                               |
+        |      ________v________                                       |
+        |     /                 \      [NO]     +-------------------+  |
+        |    /  ¿Dato de Tipo    \------------->| EXCEPCIÓN:        |  |
+        |   <  Válido (numérico)? >             | ValueError (Try)  |  |
+        |    \                   /              +-------------------+  |
+        |     \_________________/                        |             |
+        |              | [SÍ]                            |             |
+        |      ________v________                         |             |
+        |     /                 \      [SÍ]     +-------------------+  |
+        |    /   ¿Producto ya    \------------->| PRINT: Mensaje    |  |
+        |   <      existe?       >              | de Error (Rojo)   |  |
+        |    \                   /              +-------------------+  |
+        |     \_________________/                        |             |
+        |              | [NO]                            |             |
+        |              v                                 |             |
+        |     +------------------+                       |             |
+        |     | MODIFICAR RAM    |                       |             |
+        |     | (append/remove)  |                       |             |
+        |     +------------------+                       |             |
+        |              |                                 |             |
+        |              v                                 |             |
+        |     +------------------+                       |             |
+        |     | guardar_datos()  | <---------------------+             |
+        |     | (Serializar JSON)|                                     |
+        |     +------------------+                                     |
+        |              |                                               |
+        +--------------+-----------------------------------------------+
