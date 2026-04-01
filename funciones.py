@@ -72,9 +72,12 @@ def mostrar_inventario(inventario):
     if not inventario:
         print("   Inventario vacío.")
     else:
-        print(f"   {'NOMBRE':<18} | {'PRECIO':>10} | {'STOCK':>8}")
+        print(f"  ╭───────────────────────────────────────────╮")
+        print(f"  | {AMARILLO}{'NOMBRE':<18}{RESET} | {AMARILLO}{'PRECIO':>10}{RESET} | {AMARILLO}{'STOCK':>8}{RESET}|")
+        print(f"  |───────────────────────────────────────────|")
         for p in inventario:
-            print(f"   {p['nombre']:<18} | ${p['precio']:>9.2f} | {p['cantidad']:>8}")
+            print(f"  | {p['nombre']:<18} | ${p['precio']:>9.2f} | {p['cantidad']:>8}|")
+        print(f"  ╰───────────────────────────────────────────╯")
     print(f"{AZUL}--------------------------------------------------{RESET}")
 
 def actualizar_producto(inventario):
