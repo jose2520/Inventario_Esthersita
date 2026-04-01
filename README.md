@@ -42,5 +42,5 @@ El proyecto sigue una arquitectura modular para facilitar su mantenimiento:
 ## 💻 Instalación y Uso
 
 1. **Clona este repositorio o descarga los archivos:**
-   ```bash
-   git clone [https://github.com/tu-usuario/proyecto-inventario.git](https://github.com/tu-usuario/proyecto-inventario.git)
+    ```bash
+    git clone [https://github.com/jose2520/Inventario_Esthersita.git](https://github.com/jose2520/Inventario_Esthersita.git) 
